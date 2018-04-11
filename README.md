@@ -1,5 +1,5 @@
 # Linear-Regression
-Contains an object-oriented model for linear regression made from scratch using mathematical theory
+Contains an object-oriented model for linear regression made from scratch using mathematical theory.
 
 This model has not been optimized and is intended for educational purposes rather than maximum performance.
 
@@ -18,6 +18,7 @@ These Python packages are also needed:
 
 * numpy
 * matplotlib
+* pandas
 
 
 ### Installing
@@ -29,6 +30,7 @@ By default, Python should come with pip (a package manager). Use it to install t
 ```
 pip install numpy
 pip install matplotlib
+pip install pandas
 ```
 
 ## Usage
@@ -45,7 +47,7 @@ done prior to creating a model.
 ### Advanced
 
 1) Create a new Python script
-2) Save it in the same folder as the 'linear_regression.py' file
+2) Save it in the cloned/forked folder
 2) Use a format similar to the following:
 ```     
 from linear_regression import LinearRegression
@@ -55,10 +57,10 @@ T = ...
 
 model = LinearRegression(X=X,
                          T=T,
-                         epochs=300,
+                         epochs=1000,
                          learn_rate=0.001,
-                         reg_L1=0,
-                         reg_L2=0)
+                         reg_L1=0, # Lasso regularization coefficient
+                         reg_L2=0) # Ridge regularization coefficient
 
 for i in xrange(model.epochs):
             
@@ -66,7 +68,7 @@ for i in xrange(model.epochs):
     model.calculate_error()
     model.update_weights()
         
-    if i % 10 == 0:
+    if i % 100 == 0:
         print "Iteration: " + str(i) + "   Error:", model.errors[i]
     
 model.calculate_R2()
@@ -79,6 +81,7 @@ model.plot_predictions()
 * [Python](https://www.python.org/about/) - A programming language used here to create exploratory data graphs
 * [Numpy](http://www.numpy.org/) - Python library for mathematical and matrix operations 
 * [Matplotlib](https://matplotlib.org/) - Python library for graphing data
+* [Pandas](https://pandas.pydata.org/pandas-docs/stable/) - Python library for data manipulation
 
 
 ## Authors
