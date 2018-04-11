@@ -52,8 +52,8 @@ done prior to creating a model.
 ```     
 from linear_regression import LinearRegression
 
-X = ...
-T = ...
+X = ...   # input data
+T = ...   # target data
 
 model = LinearRegression(X=X,
                          T=T,
