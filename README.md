@@ -41,7 +41,38 @@ done prior to creating a model.
 
 1) Clone/fork this repository
 2) Open and run the 'example.py' file
-3) 
+
+### Advanced
+
+1) Create a new Python script
+2) Save it in the same folder as the 'linear_regression.py' file
+2) Use a format similar to the following:
+```     
+from linear_regression import LinearRegression
+
+X = ...
+T = ...
+
+model = LinearRegression(X=X,
+                         T=T,
+                         epochs=300,
+                         learn_rate=0.001,
+                         reg_L1=0,
+                         reg_L2=0)
+
+for i in xrange(model.epochs):
+            
+    model.make_predictions()
+    model.calculate_error()
+    model.update_weights()
+        
+    if i % 10 == 0:
+        print "Iteration: " + str(i) + "   Error:", model.errors[i]
+    
+model.calculate_R2()
+model.plot_errors()
+model.plot_predictions()
+```
 
 ## Built With
 
